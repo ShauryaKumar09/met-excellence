@@ -32,17 +32,17 @@ const TutorSection: React.FC = () => {
             <div className="flex flex-col lg:flex-row gap-8">
                 {/* Left side - Stats and Text */}
                 <div className="w-full lg:w-1/2">
-                    <div className="flex flex-row items-center justify-center lg:justify-start gap-24 mb-8">
+                    <div className="flex flex-row items-center justify-center lg:justify-start gap-12 sm:gap-24 mb-8">
                         <div>
-                            <div className="text-3xl font-bold text-blue2">200+</div>
+                            <div className="text-3xl font-bold text-blue2">8+</div>
                             <div className="text-blue3">classes</div>
                         </div>
                         <div>
-                            <div className="text-3xl font-bold text-blue2">20+</div>
+                            <div className="text-3xl font-bold text-blue2">10+</div>
                             <div className="text-blue3">tutors</div>
                         </div>
                         <div>
-                            <div className="text-3xl font-bold text-blue2">400+</div>
+                            <div className="text-3xl font-bold text-blue2">50+</div>
                             <div className="text-blue3">hours</div>
                         </div>
                     </div>
@@ -67,10 +67,12 @@ const TutorSection: React.FC = () => {
 
                 {/* Right side - Tutor Cards */}
                 <div className="w-full lg:w-1/2">
-                    <div className="grid grid-cols-1 xs:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-2 xs:grid-cols-3 gap-4">
                         <TutorCard name="Jasper Fang" topic="SAT Prep" image="/team/jasper_fang.png" />
-                        <TutorCard name="Felix Cheng" topic="Geometry" image="/team/felix_cheng.png" />
-                        <TutorCard name="Eric Yang" topic="UMPTYMP" image="/team/eric_yang.png" />
+                        <div className="hidden xs:block">
+                            <TutorCard name="Felix Cheng" topic="Geometry" image="/team/felix_cheng.png" />
+                        </div>
+                        <TutorCard name="Eric Yang" topic="UMPTYMP" image="/team/eric_yang.png"/>
                     </div>
                 </div>
             </div>

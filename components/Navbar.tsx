@@ -43,6 +43,9 @@ export default function Navbar() {
                             <Link target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSc4y_cO4y4v5_MI474o9HFHkreYgK67cPZQO6Ns7b9yj-Z7yw/viewform" className="text-blue2 hover:opacity-80 transition duration-300">Join Us</Link>
                         </li>
                         <li>
+                            <Link href="/faq" className="text-blue2 hover:opacity-80 transition duration-300">FAQ</Link>
+                        </li>
+                        <li>
                             <Link href="/donate" className="bg-blue2 text-white px-4 py-2 rounded-lg hover:bg-blue1 transition duration-300">
                                 Donate <FaHeart className="inline-block ml-2" />
                             </Link>

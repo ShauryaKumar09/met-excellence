@@ -62,7 +62,7 @@ const FAQPage: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
           <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Frequently Asked Questions</h1>
           <p className="text-center">
-            Find answers to common questions about Tutorverse, our classes, and how to get involved.
+            Find answers to common questions about MET Excellence, our classes, and how to get involved.
           </p>
         </div>
       </div>
