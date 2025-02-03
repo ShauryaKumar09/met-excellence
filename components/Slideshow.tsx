@@ -44,7 +44,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ items, defaultDuration = 3000 }) 
           <button
             key={index}
             className={`w-3 h-3 mx-1 rounded-full ${
-              index === currentIndex ? 'bg-white' : 'bg-blue1'
+              index === currentIndex ? 'bg-blue1' : 'bg-grey'
             }`}
             onClick={() => goToSlide(index)}
           />

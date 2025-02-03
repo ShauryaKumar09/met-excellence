@@ -20,7 +20,7 @@ export default function Navbar() {
                 <div className="container mx-auto flex justify-between items-center">
                     <div className="text-2xl font-bold">
                         <Link href="/" className="text-blue2 flex items-center">
-                            <Image src="/logo.svg" alt="MET Excellence Logo" width={32} height={32} className="priority inline-block mr-4 text-blue2" />
+                            <Image src="/logo.svg" alt="MET Excellence Logo" width={32} height={32} className="priority inline-block mr-2 text-blue2" />
                             <h1>MET Excellence</h1>
                         </Link>
                     </div>

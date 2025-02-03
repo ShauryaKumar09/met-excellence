@@ -67,9 +67,9 @@ const TutorSection: React.FC = () => {
                 {/* Right side - Tutor Cards */}
                 <div className="w-full lg:w-1/2">
                     <div className="grid grid-cols-1 xs:grid-cols-3 gap-4">
-                        {[1, 2, 3].map((index) => (
-                            <TutorCard key={index} name="Aaron Zou" topic="Science Tutor" image="https://lh3.googleusercontent.com/KZVCea4x8JejceU8DeljmxaVCqfnzlslyvu4K_l4OZX1y2_5b2gdad9dyLWaSA3QEwvfHmXT6ff115vkgrMb79xZvpdgHI8uYKSwVQlzhrGU3Y264ol7hn-IMZKdJHmRfA=w1280" />
-                        ))}
+                        <TutorCard name="Jasper Fang" topic="SAT Prep" image="/team/jasper_fang.png" />
+                        <TutorCard name="Felix Cheng" topic="Geometry" image="/team/felix_cheng.png" />
+                        <TutorCard name="Eric Yang" topic="UMPTYMP" image="/team/eric_yang.png" />
                     </div>
                 </div>
             </div>

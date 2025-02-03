@@ -15,7 +15,7 @@ const OurMissionPage: React.FC = () => {
                 </div>
 
                 {/* Values Grid */}
-                <div className="grid md:grid-cols-3 gap-8 mt-8">
+                <div className="grid md:grid-cols-3 gap-8 my-8">
                     <div className="text-center p-6 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow">
                         <FaHandHoldingHeart className="text-blue2 text-4xl mx-auto mb-4" />
                         <h3 className="text-xl font-semibold text-blue2 mb-3">Accessibility</h3>

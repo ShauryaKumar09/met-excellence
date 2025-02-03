@@ -2,25 +2,32 @@ import React from 'react';
 import { FaEnvelope } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JoinUsBar from '@/components/JoinUsBar';
 
 interface TeamMember {
     name: string;
     role: string;
     imageUrl: string;
+    email: string;
+}
+
+interface TeamSubcategory {
+    subcategory: string;
+    members: TeamMember[];
 }
 
 interface TeamCategory {
     category: string;
-    members: TeamMember[];
+    subcategories: TeamSubcategory[];
 }
 
-const TeamMember: React.FC<TeamMember> = ({ name, role, imageUrl }) => (
+const TeamMemberComponent: React.FC<TeamMember> = ({ name, role, imageUrl, email }) => (
     <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-        <img src={imageUrl} alt={name} className="w-32 h-32 rounded-full mb-4 object-cover" />
+        <img src={imageUrl} alt={name} className="w-32 h-32 rounded-2xl mb-4 object-cover" />
         <h3 className="text-xl font-semibold text-blue2 mb-2">{name}</h3>
         <p className="text-blue3 font-medium mb-2">{role}</p>
         <div className="flex gap-4">
-            <a href="#" className="text-blue2 hover:text-blue1 transition-colors">
+            <a href={`mailto:${email}`} className="text-blue2 hover:text-blue1 transition-colors">
                 <FaEnvelope size={24} />
             </a>
         </div>
@@ -30,70 +37,216 @@ const TeamMember: React.FC<TeamMember> = ({ name, role, imageUrl }) => (
 const MeetTheTeamPage: React.FC = () => {
     const teamCategories: TeamCategory[] = [
         {
-            category: "Leadership",
-            members: [
+            category: "Tutors",
+            subcategories: [
                 {
-                    name: "Jane Doe",
-                    role: "Founder & CEO",
-                    imageUrl: "/path-to-jane-image.jpg"
+                    subcategory: "Chess Tutors",
+                    members: [
+                        {
+                            name: "Evan Xiong",
+                            role: "Chess Tutor",
+                            imageUrl: "/team/evan_xiong.png",
+                            email: "evan.xiong@example.com"
+                        },
+                        {
+                            name: "Eric Yang",
+                            role: "Chess Tutor",
+                            imageUrl: "/team/eric_yang.png",
+                            email: "eric.yang@example.com"
+                        },
+                        {
+                            name: "Felix Cheng",
+                            role: "Chess Tutor",
+                            imageUrl: "/team/felix_cheng.png",
+                            email: "chengfeel0@gmail.com"
+                        },
+                        {
+                            name: "Aaron Zou",
+                            role: "Chess Tutor",
+                            imageUrl: "/team/aaron_zou.png",
+                            email: "aaron.zou@example.com"
+                        }
+                    ]
                 },
                 {
-                    name: "Mike Johnson",
-                    role: "COO",
-                    imageUrl: "/path-to-mike-image.jpg"
+                    subcategory: "STEM Tutors",
+                    members: [
+                        {
+                            name: "Kevin Qiu",
+                            role: "AMC 8, Physics, Science Bowl Tutor",
+                            imageUrl: "/team/kevin_qiu.png",
+                            email: "kevinhqiu2007@gmail.com"
+                        },
+                        {
+                            name: "Jasper Fang",
+                            role: "SAT Prep Tutor",
+                            imageUrl: "/team/jasper_fang.png",
+                            email: "jasper.fang@example.com"
+                        },
+                        {
+                            name: "Felix Cheng",
+                            role: "Geometry Tutor",
+                            imageUrl: "/team/felix_cheng.png",
+                            email: "chengfeel0@gmail.com"
+                        },
+                        {
+                            name: "Evan Huss",
+                            role: "Biology Tutor",
+                            imageUrl: "/team/evan_huss.png",
+                            email: "evan.huss00@gmail.com"
+                        },
+                        {
+                            name: "Anishk Nag",
+                            role: "Chemistry Tutor",
+                            imageUrl: "/team/anishk_nag.png",
+                            email: "anishk.nag@example.com"
+                        },
+                        {
+                            name: "Shubham Panchal",
+                            role: "Engineering Tutor",
+                            imageUrl: "/team/shubham_panchal.png",
+                            email: "shubham.panchal@example.com"
+                        },
+                        {
+                            name: "Aaron Zou",
+                            role: "Computer Science, UMTYMP Tutor",
+                            imageUrl: "/team/aaron_zou.png",
+                            email: "aaron.zou@example.com"
+                        },
+                        {
+                            name: "Eric Yang",
+                            role: "UMTYMP Prep Tutor",
+                            imageUrl: "/team/eric_yang.png",
+                            email: "eric.yang@example.com"
+                        }
+                    ]
+                },
+                {
+                    subcategory: "Other Subjects",
+                    members: [
+                        {
+                            name: "Jason Lai",
+                            role: "Chinese Culture Tutor",
+                            imageUrl: "/team/jason_lai.png",
+                            email: "jason.lai@example.com"
+                        }
+                    ]
                 }
             ]
         },
         {
-            category: "Tutors",
-            members: [
+            category: "Officers",
+            subcategories: [
                 {
-                    name: "John Smith",
-                    role: "Lead Math Tutor",
-                    imageUrl: "/path-to-john-image.jpg"
-                },
+                    subcategory: "",
+                    members: [
+                        {
+                            name: "Jasper Fang",
+                            role: "Officer",
+                            imageUrl: "/team/jasper_fang.png",
+                            email: "jasper.fang@example.com"
+                        },
+                        {
+                            name: "Jason Lai",
+                            role: "Chinese Officer",
+                            imageUrl: "/team/jason_lai.png",
+                            email: "jason.lai@example.com"
+                        },
+                        {
+                            name: "Shubham Panchal",
+                            role: "STEM Officer",
+                            imageUrl: "/team/shubham_panchal.png",
+                            email: "shubham.panchal@example.com"
+                        },
+                        {
+                            name: "Harry Ding",
+                            role: "Marketing Officer",
+                            imageUrl: "/team/harry_ding.png",
+                            email: "harry.ding@example.com"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            category: "Board of Directors",
+            subcategories: [
                 {
-                    name: "Emily Brown",
-                    role: "Science Coordinator",
-                    imageUrl: "/path-to-emily-image.jpg"
-                },
-                {
-                    name: "Alex Lee",
-                    role: "Language Arts Tutor",
-                    imageUrl: "/path-to-alex-image.jpg"
+                    subcategory: "",
+                    members: [
+                        {
+                            name: "Aaron Zou",
+                            role: "President",
+                            imageUrl: "/team/aaron_zou.png",
+                            email: "aaron.zou@example.com"
+                        },
+                        {
+                            name: "Anishk Nag",
+                            role: "Director of Volunteers",
+                            imageUrl: "/team/anishk_nag.png",
+                            email: "anishk.nag@example.com"
+                        },
+                        {
+                            name: "Evan Xiong",
+                            role: "Chair",
+                            imageUrl: "/team/evan_xiong.png",
+                            email: "evan.xiong@example.com"
+                        },
+                        {
+                            name: "Evan Huss",
+                            role: "Director of Marketing",
+                            imageUrl: "/team/evan_huss.png",
+                            email: "evan.huss00@gmail.com"
+                        },
+                        {
+                            name: "Felix Cheng",
+                            role: "Secretary & Treasurer",
+                            imageUrl: "/team/felix_cheng.png",
+                            email: "chengfeel0@gmail.com"
+                        },
+                        {
+                            name: "Kevin Qiu",
+                            role: "Program Director",
+                            imageUrl: "/team/kevin_qiu.png",
+                            email: "kevinhqiu2007@gmail.com"
+                        }
+                    ]
                 }
             ]
         }
-    ];
+    ];    
 
     return (
-        <div>
+        <div className='bg-grey'>
             <Navbar />
+            <div className="bg-blue3 text-white py-12 px-4 sm:px-8">
+                <div className='max-w-6xl mx-auto'>
+                    <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">
+                        Meet Our Team
+                    </h1>
+                    <p className="mb-6 text-center text-xl">
+                        Our dedicated team of passionate educators is committed to breaking down educational barriers, empowering students with knowledge, and transforming lives through high-quality, completely free tutoring for those who need it most.
+                    </p>
+                </div>
+            </div>
             <div className="p-4 sm:p-8 max-w-6xl mx-auto my-8">
-                <h1 className="text-3xl sm:text-4xl font-bold text-blue2 mb-8 text-center">
-                    Meet Our Team
-                </h1>
-                <p className="text-blue3 mb-12 text-center text-xl">
-                    Our dedicated team of educators is committed to providing high-quality, free tutoring to students in need.
-                </p>
                 {teamCategories.map((category, index) => (
                     <div key={index} className="mb-16">
                         <h1 className="text-3xl font-bold text-blue2 mb-8">{category.category}</h1>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {category.members.map((member, memberIndex) => (
-                                <TeamMember key={memberIndex} {...member} />
-                            ))}
-                        </div>
+                        {category.subcategories.map((subcategory, subIndex) => (
+                            <div key={subIndex} className="mb-8">
+                                <h2 className="text-2xl font-semibold text-blue2 mb-4">{subcategory.subcategory}</h2>
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                                    {subcategory.members.map((member, memberIndex) => (
+                                        <TeamMemberComponent key={memberIndex} {...member} />
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 ))}
                 <div className="mt-16 text-center">
-                    <h2 className="text-3xl font-bold text-blue2 mb-4">Join Our Team</h2>
-                    <p className="text-blue3 mb-6">
-                        Are you passionate about education and want to make a difference? We&apos;re always looking for dedicated tutors to join our team.
-                    </p>
-                    <button className="bg-blue2 text-white px-6 py-2 rounded transition-colors hover:bg-blue-700">
-                        Apply Now
-                    </button>
+                    <JoinUsBar />
                 </div>
             </div>
             <Footer />

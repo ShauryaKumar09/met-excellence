@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FaChalkboardTeacher, FaVideo, FaAngleRight } from 'react-icons/fa';
+import JoinUsBar from '@/components/JoinUsBar';
 
 interface ClassItem {
   name: string;
@@ -92,6 +93,7 @@ const AllClassesPage: React.FC = () => {
               {classes.map((classItem, index) => (
                   <ClassCard key={index} classItem={classItem} />
               ))}
+              <JoinUsBar />
           </div>
           <Footer />
       </div>
