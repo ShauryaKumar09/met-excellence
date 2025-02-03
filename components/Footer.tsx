@@ -47,7 +47,6 @@ const Footer = () => {
     return (
       <footer className="bg-blue2 text-white p-6 md:p-12">
         <div className="max-w-6xl mx-auto">
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
             {Object.entries(footerSections).map(([key, section]) => (
               <div key={key} className="flex flex-col">

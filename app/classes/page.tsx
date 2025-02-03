@@ -84,7 +84,7 @@ const AllClassesPage: React.FC = () => {
               <div className="max-w-6xl mx-auto px-4 sm:px-8">
                   <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">All Classes</h1>
                   <p className="text-center">
-                      All classes below are free to sign up for. Unless otherwise stated, all classes will be online on Zoom. These are public, small-group classes on specific topics meant to bolster a student's interest in the subject and provide a solid understanding of the topics covered.
+                      All classes below are free to sign up for. Unless otherwise stated, all classes will be online on Zoom. These are public, small-group classes on specific topics meant to bolster a student&apos;s interest in the subject and provide a solid understanding of the topics covered.
                   </p>
               </div>
           </div>
