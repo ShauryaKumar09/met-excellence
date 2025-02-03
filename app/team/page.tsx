@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { FaEnvelope } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -23,7 +24,7 @@ interface TeamCategory {
 
 const TeamMemberComponent: React.FC<TeamMember> = ({ name, role, imageUrl, email }) => (
     <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-        <img src={imageUrl} alt={name} className="w-32 h-32 rounded-2xl mb-4 object-cover" />
+        <Image src={imageUrl} alt={name} width={128} height={128} className="w-32 h-32 rounded-2xl mb-4 object-cover" />
         <h3 className="text-xl font-semibold text-blue2 mb-2">{name}</h3>
         <p className="text-blue3 font-medium mb-2">{role}</p>
         <div className="flex gap-4">

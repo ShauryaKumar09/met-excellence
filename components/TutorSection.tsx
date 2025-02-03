@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaCheckCircle, FaAngleRight } from 'react-icons/fa';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface TutorCardProps {
     name: string;
@@ -10,8 +11,8 @@ interface TutorCardProps {
 
 const TutorCard: React.FC<TutorCardProps> = ({ name, topic, image }) => (
     <div className="bg-white rounded-lg shadow-md p-4">
-        <div className="w-full h-32 bg-gray-200 rounded-lg mb-3">
-            <img src={image} alt={`${name}'s picture`} className="w-full h-full object-cover rounded-lg" />
+        <div className="w-full h-32 bg-gray-200 rounded-lg mb-3 relative">
+            <Image src={image} alt={`${name}'s picture`} layout="fill" objectFit="cover" className="rounded-lg" />
         </div>
         <div className="flex items-center">
             <span className="font-semibold">{name}</span>

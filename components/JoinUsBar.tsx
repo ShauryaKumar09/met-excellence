@@ -8,7 +8,7 @@ const JoinUsBar: React.FC = () => {
             <div className="flex flex-col items-center text-center">
                 <h2 className="text-3xl font-bold text-blue2 mb-4">Join Our Team</h2>
                 <p className="text-blue3 mb-6">
-                    Are you passionate about education and want to make a difference? We're always looking for dedicated tutors to join our team.
+                    Are you passionate about education and want to make a difference? We&apos;re always looking for dedicated tutors to join our team.
                 </p>
                 <Link href="/apply">
                     <button className="bg-blue2 text-white px-6 py-2 rounded transition-colors flex items-center">
