@@ -128,14 +128,23 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => (
       <p className="text-blue3 mb-4">{classItem.description}</p>
       <p className="text-gray-600 mb-6">Taught by: {classItem.instructors}</p>
       <div className="flex space-x-4">
-        <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
+        {classItem.comingSoon ? (
           <button 
-            className={`px-4 py-2 rounded transition-colors ${classItem.comingSoon ? 'bg-grey text-gray-500 cursor-not-allowed' : 'bg-blue2 text-white hover:bg-blue1'}`}
-            disabled={classItem.comingSoon}
+            className="px-4 py-2 rounded bg-grey text-gray-500 cursor-not-allowed"
+            disabled
           >
-            {classItem.comingSoon ? 'Coming Soon' : `Sign Up for ${classItem.name}`}
+            Coming Soon
           </button>
-        </Link>
+        ) : (
+          <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
+            <button 
+              className="px-4 py-2 rounded bg-blue2 text-white hover:bg-blue1 transition-colors"
+            >
+              Sign Up for {classItem.name}
+            </button>
+          </Link>
+        )}
+
       </div>
     </div>
   </div>

@@ -9,8 +9,7 @@ const OurMissionPage: React.FC = () => {
                 <div className="text-center mb-12">
                     <h1 className="text-4xl font-bold text-blue2 mb-6 mt-8">Our Mission</h1>
                     <p className="text-blue3 text-xl max-w-3xl mx-auto">
-                        To provide <strong>accessible</strong>, <strong>high-quality</strong> education to all students through 
-                        free online tutoring and mentorship.
+                       Empowering students through <strong>free online tutoring</strong> and mentorship, <strong>unlocking</strong> their potential to make a meaningful <strong>impact</strong> on the world.
                     </p>
                 </div>
 
@@ -18,25 +17,25 @@ const OurMissionPage: React.FC = () => {
                 <div className="grid md:grid-cols-3 gap-8 my-8">
                     <div className="text-center p-6 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow">
                         <FaHandHoldingHeart className="text-blue2 text-4xl mx-auto mb-4" />
-                        <h3 className="text-xl font-semibold text-blue2 mb-3">Accessibility</h3>
+                        <h3 className="text-xl font-semibold text-blue2 mb-3">Motivate</h3>
                         <p className="text-blue3">
-                            Breaking down barriers to education by providing free tutoring services to students in need.
+                            Inspire kids to dream big and believe in their potential by breaking down barriers to education.
                         </p>
                     </div>
 
                     <div className="text-center p-6 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow">
                         <FaGraduationCap className="text-blue2 text-4xl mx-auto mb-4" />
-                        <h3 className="text-xl font-semibold text-blue2 mb-3">Excellence</h3>
+                        <h3 className="text-xl font-semibold text-blue2 mb-3">Enrich</h3>
                         <p className="text-blue3">
-                            Delivering high-quality education through dedicated tutors and comprehensive learning resources.
+                            Provide access to extracurricular programs that nurture their passions and talents.
                         </p>
                     </div>
 
                     <div className="text-center p-6 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow">
                         <FaUsers className="text-blue2 text-4xl mx-auto mb-4" />
-                        <h3 className="text-xl font-semibold text-blue2 mb-3">Community</h3>
+                        <h3 className="text-xl font-semibold text-blue2 mb-3">Transform</h3>
                         <p className="text-blue3">
-                            Building a supportive learning environment where students and tutors thrive together.
+                        Empower kids to become confident, capable changemakers who positively transform the world.
                         </p>
                     </div>
                 </div>
