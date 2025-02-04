@@ -5,6 +5,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import JoinUsBar from '@/components/JoinUsBar';
+import FAQHeader from '@/components/Header';
 
 interface TeamMember {
     name: string;
@@ -221,16 +222,7 @@ const MeetTheTeamPage: React.FC = () => {
     return (
         <div className='bg-grey'>
             <Navbar />
-            <div className="bg-blue3 text-white py-12 px-4 sm:px-8">
-                <div className='max-w-6xl mx-auto'>
-                    <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">
-                        Meet Our Team
-                    </h1>
-                    <p className="mb-6 text-center text-xl">
-                        Our dedicated team of passionate educators is committed to breaking down educational barriers, empowering students with knowledge, and transforming lives through high-quality, completely free tutoring for those who need it most.
-                    </p>
-                </div>
-            </div>
+            <FAQHeader title='Meet Our Team' description=' Our dedicated team of passionate educators is committed to breaking down educational barriers, empowering students with knowledge, and transforming lives through high-quality, completely free tutoring for those who need it most.'/>
             <div className="p-4 sm:p-8 max-w-6xl mx-auto my-8">
                 {teamCategories.map((category, index) => (
                     <div key={index} className="mb-16">

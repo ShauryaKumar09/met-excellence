@@ -3,6 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FAQHeader from '@/components/Header';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 
 interface FAQItem {
@@ -58,14 +59,7 @@ const FAQPage: React.FC = () => {
   return (
     <div className='bg-grey '>
       <Navbar />
-      <div className="bg-blue3 text-white py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Frequently Asked Questions</h1>
-          <p className="text-center">
-            Find answers to common questions about MET Excellence, our classes, and how to get involved.
-          </p>
-        </div>
-      </div>
+      <FAQHeader title="Frequently Asked Questions" description="Find answers to common questions about MET Excellence, our classes, and how to get involved." />
       <div className="p-4 sm:p-8 max-w-3xl mx-auto my-16 -mt-6">
         {faqs.map((faq, index) => (
           <FAQItem key={index} faq={faq} />

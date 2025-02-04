@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FAQHeader from '@/components/Header';
 import { FaChalkboardTeacher, FaVideo, FaClock } from 'react-icons/fa';
 import JoinUsBar from '@/components/JoinUsBar';
 
@@ -154,14 +155,7 @@ const AllClassesPage: React.FC = () => {
     return (
       <div className='bg-grey'>
           <Navbar />
-          <div className="bg-blue3 text-white py-12">
-              <div className="max-w-6xl mx-auto px-4 sm:px-8">
-                  <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">All Classes</h1>
-                  <p className="text-center">
-                      All classes below are free to sign up for. Unless otherwise stated, all classes will be online on Zoom. These are public, small-group classes on specific topics meant to bolster a student&apos;s interest in the subject and provide a solid understanding of the topics covered.
-                  </p>
-              </div>
-          </div>
+          <FAQHeader title='All Classes' description='All classes below are free to sign up for. Unless otherwise stated, all classes will be online on Zoom. These are public, small-group classes on specific topics meant to bolster a student&apos;s interest in the subject and provide a solid understanding of the topics covered.'/>
           <div className="p-4 sm:p-8 max-w-6xl mx-auto my-8">
               {classes.map((classItem, index) => (
                   <ClassCard key={index} classItem={classItem} />
