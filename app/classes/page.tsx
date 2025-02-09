@@ -13,6 +13,8 @@ interface ClassItem {
   isInPerson: boolean;
   description: string;
   instructors: string;
+  time?: string;
+  grades?: number[];
   signUpLink: string;
   comingSoon?: boolean;
 }
@@ -22,26 +24,31 @@ const classes: ClassItem[] = [
     name: 'Chess',
     image: '/banners/chess.png',
     isInPerson: true,
-    description: 'Instruction and Tournaments. Beginner to Advanced level. Located in the Plymouth Library Meeting Room. Time: 1pm - 3pm, Sunday. Tournaments held! Group instruction and ELO system.',
+    description: 'Instruction and Tournaments. Beginner to Advanced level. Located in the Plymouth Library Meeting Room. Tournaments held! Group instruction and ELO system. All ages welcome!',
     instructors: 'Mr. Evan Xiong, Mr. Eric Yang, and Mr. Felix Cheng',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfsBLjoVsIYgjfD-tdugOPzQY7bH-13Ry4RX-ALVIIvvxcQgQ/viewform',
+    time: '1pm - 3pm CST on Sundays',
+    grades: [1, 8] 
   },
   {
     name: 'UMTYMP Entrance Exam Prep',
     image: '/banners/umtymp.png',
     isInPerson: false,
-    description: 'We all know how wonderful the UMTYMP program is, but we also know that the entrance exam is very tough. Ensure that you pass the entrance exam by signing up for this exam preparation class! We will go over test taking strategy, tricks to save you time and effort, and much more! Time: 7-9 PM CST every Sunday',
+    description: 'We all know how wonderful the UMTYMP program is, but we also know that the entrance exam is very tough. Ensure that you pass the entrance exam by signing up for this exam preparation class! We will go over test taking strategy, tricks to save you time and effort, and much more!',
     instructors: 'Mr. Eric Yang and Mr. Aaron Zou',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=UMTYMP+Prep',
+    time: '7pm - 9pm CST on Sundays',
+    grades: [4, 7],
   },
   {
     name: 'AMC 8 Prep',
-    image: '/banners/aops.png',
+    image: '/banners/amc8.png',
     isInPerson: false,
     description: 'This rigorous 16-week course prepares you for the AMC 8 next fall. You can sign up for the class even if it is still going on; we cover different topics every week. This class will cover test strategies, number theory, geometry, combinatorics and probability, and algebra. Other topics will also be covered. We will go over previous AMC 8 tests.',
     instructors: 'Mr. Kevin Qiu',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=AMC+8+Prep',
     comingSoon: true,
+    grades: [4, 8]
   },
   {
     name: 'Intro to Physics',
@@ -51,6 +58,7 @@ const classes: ClassItem[] = [
     instructors: 'Mr. Kevin Qiu',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Physics',
     comingSoon: true,
+    grades: [4, 8]
   },
   {
     name: 'Biology',
@@ -60,6 +68,7 @@ const classes: ClassItem[] = [
     instructors: 'Mr. Evan Huss',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Biology',
     comingSoon: true,
+    grades: [4, 8] 
   },
   {
     name: 'Intro to Python',
@@ -69,6 +78,7 @@ const classes: ClassItem[] = [
     instructors: 'Mr. Aaron Zou',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Python',
     comingSoon: true,
+    grades: [4, 8]
   },
   {
     name: 'Intro to Chemistry',
@@ -78,6 +88,7 @@ const classes: ClassItem[] = [
     instructors: 'Mr. Anishk Nag',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Chemistry',
     comingSoon: true,
+    grades: [4, 8] 
   },
   {
     name: 'Geometry',
@@ -87,6 +98,7 @@ const classes: ClassItem[] = [
     instructors: 'Mr. Felix Cheng',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Geometry',
     comingSoon: true,
+    grades: [4, 8] 
   },
 ];
 
@@ -118,7 +130,19 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => (
         )}
       </div>
       <p className="text-blue3 mb-4">{classItem.description}</p>
-      <p className="text-gray-600 mb-6">Taught by: {classItem.instructors}</p>
+      <p className="text-gray-600">Taught by {classItem.instructors}</p>
+      <p className="text-gray-600">{classItem.time}</p>
+      <p className="text-gray-600 mb-6">
+        {classItem.grades && classItem.grades.length > 0 ? (
+          classItem.grades.length === 1 ? (
+            `Recommended grade: ${classItem.grades[0]}th`
+          ) : (
+            `Recommended grades: ${classItem.grades[0]}-${classItem.grades[classItem.grades.length - 1]}th`
+          )
+        ) : (
+          'Grade information not available'
+        )}
+      </p>
       <div className="flex space-x-4">
         {classItem.comingSoon ? (
           <button 
