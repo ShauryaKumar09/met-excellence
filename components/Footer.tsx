@@ -16,19 +16,20 @@ const Footer = () => {
       <footer className="bg-blue2 text-white p-6 md:p-12">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-left gap-6">
-            <div className="flex flex-row justify-between items-center mt-0 lg:-mt-3.5">
-                <Image
-                    src="/logowhite.svg"
-                    alt="MET Excellence Logo"
-                    width={64}
-                    height={64}
-                    className="priority inline-block mr-2 text-blue2 order-2 lg:order-1 lg:w-12 lg:h-12"
-                />
-                <div className='flex flex-col lg:order-2 order-1 lg:mt-0 -mt-12'>
-                  <h1 className="text-2xl font-bold">MET Excellence</h1>
-                  <p className='text-sm'>Registered Minnesota Nonprofit</p>
-                </div>
-            </div>
+            <Link href="/" className="flex flex-row justify-between items-center mt-0 lg:-mt-3.5">
+                
+                  <Image
+                      src="/logowhite.svg"
+                      alt="MET Excellence Logo"
+                      width={64}
+                      height={64}
+                      className="priority inline-block mr-2 text-blue2 order-2 lg:order-1 lg:w-12 lg:h-12"
+                  />
+                  <div className='flex flex-col lg:order-2 order-1 lg:mt-0 -mt-12'>
+                    <h1 className="text-2xl font-bold">MET Excellence</h1>
+                    <p className='text-sm'>Registered Minnesota Nonprofit</p>
+                  </div>
+              </Link>
             <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 lg:mt-0 -mt-12">
               <Link href="/terms" className="hover:text-gray-300">
                 Terms and Conditions

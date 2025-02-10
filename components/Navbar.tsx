@@ -59,7 +59,7 @@ export default function Navbar() {
                                 <Link href="/classes" className="text-blue2 hover:opacity-80 transition duration-300 block">Classes</Link>
                             </li>
                             <li>
-                                <Link target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSclQL5aPyuBHfMAenxOEsSdZYKhEXH2P1iQiTTya_dSo3VrgA/viewform" className="text-blue2 hover:opacity-80 transition duration-300 block">Private Lessons</Link>
+                                <Link target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSclQL5aPyuBHfMAenxOEsSdZYKhEXH2P1iQiTTya_dSo3VrgA/viewform" className="text-blue2 hover:opacity-80 transition duration-300 block">Private Tutoring</Link>
                             </li>
                             <li>
                                 <Link href="/team" className="text-blue2 hover:opacity-80 transition duration-300 block">Team</Link>
