@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function ComingSoon() {
   return (
     <div className="flex flex-col h-screen">
+      <Navbar />
       <div className="flex flex-col items-center justify-center flex-grow text-blue3">
         <h1 className="text-4xl font-bold mb-4">Coming Soon!</h1>
         <p className="text-xl mb-8">We&apos;re working hard to bring this page to you. Stay tuned!</p>
