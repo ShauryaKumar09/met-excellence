@@ -23,7 +23,8 @@ const Footer = () => {
                       alt="MET Excellence Logo"
                       width={64}
                       height={64}
-                      className="priority inline-block mr-2 text-blue2 order-2 lg:order-1 lg:w-12 lg:h-12"
+                      priority
+                      className="inline-block mr-2 text-blue2 order-2 lg:order-1 lg:w-12 lg:h-12"
                   />
                   <div className='flex flex-col lg:order-2 order-1 lg:mt-0 -mt-12'>
                     <h1 className="text-2xl font-bold">MET Excellence</h1>

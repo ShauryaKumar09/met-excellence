@@ -12,7 +12,7 @@ interface TutorCardProps {
 const TutorCard: React.FC<TutorCardProps> = ({ name, topic, image }) => (
     <div className="bg-white rounded-lg shadow-md p-4">
         <div className="w-full h-32 bg-gray-200 rounded-lg mb-3 relative">
-            <Image src={image} alt={`${name}'s picture`} layout="fill" objectFit="cover" className="rounded-lg" loading="lazy" />
+            <Image src={image} alt={`${name}'s picture`} fill className="rounded-lg object-cover" loading="lazy" />
         </div>
         <div className="flex items-center">
             <span className="font-semibold">{name}</span>

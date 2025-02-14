@@ -15,6 +15,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.metexcellence.org'),
   title: "MET Excellence | Free Extracurricular Tutoring in Minnesota",
   description: "MET Excellence offers free chess classes, math tutoring, and extracurricular enrichment for Minnesota students. Join our passionate high school tutors to enhance your skills and unlock your potential.",
   keywords: "metexcellence, tutoring, Minnesota, met excellence, tutoringmn, mn tutoring, chess classes, math tutoring, extracurricular, high school tutors",

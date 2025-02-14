@@ -15,9 +15,9 @@ const TutoringPage: React.FC = () => {
       <Image
         src={`/slide/${file}`}
         alt={`Slide ${file}`}
-        layout="fill"
-        objectFit="cover"
-        className='priority'
+        fill
+        priority
+        className="object-cover"
       />
     ),
     duration: 5000, // 5 seconds

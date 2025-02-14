@@ -107,13 +107,13 @@ const classes: ClassItem[] = [
 const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => (
   <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden mb-8">
     <div className="md:w-1/3 relative h-64 md:h-auto">
-      <Image 
-        src={classItem.image} 
-        alt={classItem.name} 
-        layout="fill" 
-        objectFit="cover"
-        loading="lazy"
-      />
+      <Image
+      src={classItem.image}
+      alt={classItem.name}
+      fill
+      className="object-cover"
+      loading="lazy"
+    />
     </div>
     <div className="md:w-2/3 p-8">
       <div className="flex items-center justify-between mb-4">
@@ -185,7 +185,6 @@ const AllClassesPage: React.FC = () => {
       {classes.map((classItem, index) => (
         <ClassCard key={index} classItem={classItem} />
       ))}
-
         <JoinUsBar />
       </div>
       <Footer />
