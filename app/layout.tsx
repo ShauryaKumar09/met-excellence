@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins, Syne } from "next/font/google";
 import "./globals.css";
 
@@ -6,14 +6,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
 });
 
 const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
   weight: ["400", "700"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -42,10 +40,13 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#ffffff",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+};
 
 export default function RootLayout({
   children,
@@ -57,7 +58,7 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://www.metexcellence.org" />
       </head>
-      <body className={`${poppins.variable} ${syne.variable} font-sans antialiased`}>
+      <body className={`${poppins.variable} ${syne.variable} antialiased`}>
         {children}
       </body>
     </html>
