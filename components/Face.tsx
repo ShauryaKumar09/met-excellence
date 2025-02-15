@@ -38,7 +38,7 @@ const TutoringPage: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Link href="/classes">
-              <button className="bg-blue2 text-white px-6 py-2 rounded transition-colors w-full sm:w-auto">
+              <button className="bg-blue-gradient text-white px-6 py-2 rounded transition-colors w-full sm:w-auto">
                 Start Learning
               </button>
             </Link>

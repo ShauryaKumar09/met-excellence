@@ -157,7 +157,7 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => (
         ) : (
           <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
             <button 
-              className="px-4 py-2 rounded bg-blue2 text-white hover:bg-blue1 transition-colors"
+              className="px-4 py-2 rounded bg-blue-gradient text-white hover:bg-blue1 transition-colors"
             >
               Sign Up for {classItem.name}
             </button>

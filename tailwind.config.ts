@@ -17,6 +17,9 @@ export default {
       screens: {
         'xs': '480px',
       },
+      backgroundImage: {
+        'blue-gradient': 'linear-gradient(to right, #43B0F1, #43B0F1, #057DCD)',
+      },
     },
   },
   plugins: [],

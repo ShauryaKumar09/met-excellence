@@ -54,7 +54,7 @@ const TutorSection: React.FC = () => {
                     
                     <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
                         <Link target="_blank" rel="noopener noreferrer" href='https://docs.google.com/forms/d/e/1FAIpQLSc4y_cO4y4v5_MI474o9HFHkreYgK67cPZQO6Ns7b9yj-Z7yw/viewform'>
-                            <button className="bg-blue2 text-white px-6 py-2 rounded transition-colors">
+                            <button className="bg-blue-gradient text-white px-6 py-2 rounded transition-colors">
                                 Become a Tutor
                             </button>
                         </Link>

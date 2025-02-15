@@ -11,7 +11,7 @@ const JoinUsBar: React.FC = () => {
                     Are you passionate about education and want to make a difference? We&apos;re always looking for dedicated tutors to join our team.
                 </p>
                 <Link target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSc4y_cO4y4v5_MI474o9HFHkreYgK67cPZQO6Ns7b9yj-Z7yw/viewform">
-                    <button className="bg-blue2 text-white px-6 py-2 rounded transition-colors flex items-center">
+                    <button className="bg-blue-gradient text-white px-6 py-2 rounded transition-colors flex items-center">
                         Apply Now
                         <FaAngleRight className='ml-2'/>
                     </button>
