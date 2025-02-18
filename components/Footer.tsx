@@ -13,7 +13,7 @@ const Footer = () => {
     ];
   
     return (
-      <footer className="bg-blue-gradient text-white p-6 md:p-12">
+      <footer className="bg-blue2 text-white p-6 md:p-12">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-left gap-6">
             <Link href="/" className="flex flex-row justify-between items-center mt-0 lg:-mt-3.5">
