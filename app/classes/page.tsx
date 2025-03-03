@@ -196,7 +196,7 @@ const AllClassesPage: React.FC = () => {
       const classValue = params.get('class');
       setClassParam(classValue);
     }
-  }, [router]); // React to router changes
+  }, [router]);
 
   useEffect(() => {
     if (classParam) {
