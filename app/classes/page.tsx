@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, Suspense } from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaChalkboardTeacher, FaVideo, FaClock } from 'react-icons/fa';
-import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation'; // Import useRouter
 import { FaAngleRight } from 'react-icons/fa';
 
 import Navbar from '@/components/Navbar';
@@ -176,7 +176,7 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
             <Link href={classItem.moreInfoLink}>
               <button className="bg-grey text-blue2 px-6 py-2 rounded hover:bg-gray-300 transition-colors flex items-center justify-center sm:justify-start w-full sm:w-auto">
                 More Information
-                <FaAngleRight className='ml-2'/> 
+                <FaAngleRight className='ml-2'/>
               </button>
             </Link>
           ) : null}
@@ -187,8 +187,16 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
 };
 
 const AllClassesPage: React.FC = () => {
-  const searchParams = useSearchParams();
-  const classParam = searchParams.get('class');
+  const router = useRouter(); // Use useRouter
+  const [classParam, setClassParam] = React.useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') { // Ensure we're in the browser
+      const params = new URLSearchParams(window.location.search);
+      const classValue = params.get('class');
+      setClassParam(classValue);
+    }
+  }, [router]); // React to router changes
 
   useEffect(() => {
     if (classParam) {
@@ -215,9 +223,7 @@ const AllClassesPage: React.FC = () => {
       <FAQHeader title='All Classes' description='All classes below are free to sign up for. Unless otherwise stated, all classes will be online on Zoom. These are public, small-group classes on specific topics meant to bolster a student&apos;s interest in the subject and provide a solid understanding of the topics covered.' />
       <div className="p-4 sm:p-8 max-w-6xl mx-auto my-8">
         {classes.map((classItem) => (
-          <Suspense fallback={<div>Loading...</div>} key={classItem.name}>
-            <ClassCard key={classItem.name} classItem={classItem} />
-          </Suspense>
+          <ClassCard key={classItem.name} classItem={classItem} />
         ))}
         <JoinUsBar />
       </div>
