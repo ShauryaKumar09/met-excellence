@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -215,7 +215,9 @@ const AllClassesPage: React.FC = () => {
       <FAQHeader title='All Classes' description='All classes below are free to sign up for. Unless otherwise stated, all classes will be online on Zoom. These are public, small-group classes on specific topics meant to bolster a student&apos;s interest in the subject and provide a solid understanding of the topics covered.' />
       <div className="p-4 sm:p-8 max-w-6xl mx-auto my-8">
         {classes.map((classItem) => (
-          <ClassCard key={classItem.name} classItem={classItem} />
+          <Suspense fallback={<div>Loading...</div>} key={classItem.name}>
+            <ClassCard key={classItem.name} classItem={classItem} />
+          </Suspense>
         ))}
         <JoinUsBar />
       </div>
