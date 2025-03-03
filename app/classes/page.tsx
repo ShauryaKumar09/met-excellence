@@ -32,7 +32,7 @@ const classes: ClassItem[] = [
     name: 'Chess',
     image: '/banners/chess.png',
     isInPerson: true,
-    description: 'Instruction and Tournaments. Beginner to Advanced level. Located in the Plymouth Library Meeting Room. Tournaments held! Group instruction and ELO system. All ages welcome!',
+    description: 'Instruction and Tournaments. Beginner to Advanced level. Tournaments held! Group instruction and ELO system. All ages welcome!',
     instructors: 'Mr. Evan Xiong, Mr. Eric Yang, and Mr. Felix Cheng',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfsBLjoVsIYgjfD-tdugOPzQY7bH-13Ry4RX-ALVIIvvxcQgQ/viewform',
     time: '1pm - 3pm CST on Sundays',
