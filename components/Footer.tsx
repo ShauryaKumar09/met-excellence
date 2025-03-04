@@ -56,7 +56,7 @@ const Footer = () => {
         ))}
       </div>
       </div>
-      <div className="text-center text-xs sm:mt-0 mt-12">
+      <div className="text-center text-xs sm:mt-0 mt-12 -mb-4">
       <p>made with 🤍 by mohan atkuri</p>
       </div>
     </div>
