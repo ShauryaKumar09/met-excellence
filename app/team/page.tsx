@@ -173,6 +173,12 @@ const MeetTheTeamPage: React.FC = () => {
                             email: "mincathepig@gmail.com"
                         },
                         {
+                            name: "Eric Yang",
+                            role: "Vice President",
+                            imageUrl: "/team/eric_yang.png",
+                            email: "yangeri001@isd284.com",
+                        },
+                        {
                             name: "Anishk Nag",
                             role: "Director of Volunteers",
                             imageUrl: "/team/anishk_nag.png",
@@ -195,12 +201,6 @@ const MeetTheTeamPage: React.FC = () => {
                             role: "Director of Finance",
                             imageUrl: "/team/felix_cheng.png",
                             email: "chengfeel0@gmail.com"
-                        },
-                        {
-                            name: "Eric Yang",
-                            role: "Director of Comms",
-                            imageUrl: "/team/eric_yang.png",
-                            email: "yangeri001@isd284.com",
                         },
                         {
                             name: "Kevin Qiu",
