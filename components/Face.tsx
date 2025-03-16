@@ -17,7 +17,7 @@ const Face: React.FC = () => {
         alt={`Slide ${file}`}
         fill
         priority
-        className="object-cover"
+        className="object-cover pointer-events-none select-none"
       />
     ),
     duration: 5000, // 5 seconds

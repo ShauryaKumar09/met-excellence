@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Face from "@/components/Face";
 import OurMissionPage from "@/components/OurMission";
 import TutorSection from "@/components/TutorSection";
+import TestimonialsPage from '@/components/Testimonials';
 import Footer from "@/components/Footer";
 import NewsSlice from "@/components/NewsSlice";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <NewsSlice />
       <OurMissionPage />
       <TutorSection />
+      <TestimonialsPage />
       <Footer />
     </div>
   );

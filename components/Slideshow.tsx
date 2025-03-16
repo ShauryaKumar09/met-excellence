@@ -11,9 +11,10 @@ interface SlideItem {
 interface SlideshowProps {
   items: SlideItem[];
   defaultDuration?: number;
+  height?: string; // New prop for height
 }
 
-const Slideshow: React.FC<SlideshowProps> = ({ items, defaultDuration = 3000 }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ items, defaultDuration = 3000, height = 'h-80' }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -43,7 +44,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ items, defaultDuration = 3000 }) 
   });
 
   return (
-    <div className="relative w-full h-80" {...handlers}>
+    <div className={`relative w-full ${height}`} {...handlers}>
       {items.map((item, index) => (
         <div
           key={index}
