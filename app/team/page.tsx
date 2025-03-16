@@ -27,7 +27,7 @@ interface TeamCategory {
 
 const TeamMemberComponent: React.FC<TeamMember> = ({ name, role, imageUrl, email }) => (
     <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-        <Image src={imageUrl} alt={name} width={128} height={128} className="w-44 h-44 rounded-2xl mb-4 object-cover" />
+        <Image src={imageUrl} alt={name} width={128} height={128} className="w-44 md:h-44 h-32 rounded-2xl mb-4 object-cover" />
         <h3 className="text-xl font-semibold text-blue2 mb-2 text-center">{name}</h3>
         <p className="text-blue3 font-medium mb-2 text-center">{role}</p>
         <div className="flex gap-4">
@@ -243,7 +243,7 @@ const MeetTheTeamPage: React.FC = () => {
                         {category.subcategories.map((subcategory, subIndex) => (
                             <div key={subIndex} className="mb-8">
                                 <h2 className="text-2xl font-semibold text-blue2 mb-4">{subcategory.subcategory}</h2>
-                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                     {subcategory.members.map((member, memberIndex) => (
                                         <TeamMemberComponent key={memberIndex} {...member} />
                                     ))}

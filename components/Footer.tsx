@@ -17,7 +17,6 @@ const Footer = () => {
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-col lg:flex-row justify-between items-left gap-6">
       <Link href="/" className="flex flex-row justify-between items-center mt-0 lg:-mt-3.5">
-        
           <Image
             src="/logowhite.svg"
             alt="MET Excellence Logo"
@@ -31,7 +30,7 @@ const Footer = () => {
           <p className='text-sm'>Registered Minnesota Nonprofit</p>
           </div>
         </Link>
-      <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 lg:mt-0 -mt-12">
+      <div className="flex flex-col md:flex-row space-y-1.5 md:space-y-0 md:space-x-6 lg:mt-0 -mt-12">
         <Link href="/terms" className="hover:text-gray-300">
         Terms and Conditions
         </Link>
@@ -44,7 +43,7 @@ const Footer = () => {
       </div>
       <div className="flex space-x-4">
         {socialLinks.map((link, index) => (
-        <a 
+        <Link 
           key={index} 
           href={link.href} 
           target="_blank" 
@@ -52,11 +51,11 @@ const Footer = () => {
           className="hover:opacity-80"
         >
           <link.icon className="w-6 h-6" />
-        </a>
+        </Link>
         ))}
       </div>
       </div>
-      <div className="text-center text-xs sm:mt-0 mt-12 -mb-4">
+      <div className="text-center text-xs sm:mt-0 mt-8 sm:-mb-4 mb-0">
       <p>made with 🤍 by mohan atkuri</p>
       </div>
     </div>
