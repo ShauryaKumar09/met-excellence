@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaAngleRight } from 'react-icons/fa';
-import Slideshow from './Slideshow';
+import Slideshow from './props/Slideshow';
 import fs from 'fs';
 import path from 'path';
 

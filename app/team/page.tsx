@@ -6,7 +6,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import JoinUsBar from '@/components/JoinUsBar';
-import FAQHeader from '@/components/Header';
+import FAQHeader from '@/components/props/Header';
 
 interface TeamMember {
     name: string;

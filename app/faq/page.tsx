@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import FAQHeader from '@/components/Header';
+import FAQHeader from '@/components/props/Header';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 
 interface FAQItem {

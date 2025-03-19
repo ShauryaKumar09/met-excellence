@@ -2,7 +2,7 @@
 
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
-import FAQHeader from '@/components/Header';
+import FAQHeader from '@/components/props/Header';
 import Footer from '@/components/Footer';
 
 const ChessPage: React.FC = () => {

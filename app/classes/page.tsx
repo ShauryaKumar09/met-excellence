@@ -10,7 +10,7 @@ import { FaAngleRight } from 'react-icons/fa';
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import FAQHeader from '@/components/Header';
+import FAQHeader from '@/components/props/Header';
 import JoinUsBar from '@/components/JoinUsBar';
 
 interface ClassItem {

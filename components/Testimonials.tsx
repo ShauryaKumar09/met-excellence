@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-import Slideshow from './Slideshow'; // Make sure this path is correct
+import Slideshow from './props/Slideshow'; // Make sure this path is correct
 
 const TestimonialsPage: React.FC = () => {
     const testimonials = [
