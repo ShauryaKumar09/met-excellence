@@ -34,14 +34,14 @@ const TutorSection: React.FC = () => {
 
     return (
         <div className="p-4 sm:p-8 lg:max-w-6xl max-w-3xl mx-auto mb-12">
-            <h1 className="text-4xl font-bold text-blue2 mb-12 mt-8 text-center">
+            <h1 className="text-4xl font-bold text-blue2 mb-6 lg:mb-12 mt-8 text-center">
                 Meet our volunteer tutors
             </h1>
             
             <div className="flex flex-col lg:flex-row gap-8">
                 {/* Left side - Stats and Text */}
                 <div className="w-full lg:w-1/2">
-                    <div ref={ref} className="flex flex-row items-center justify-center lg:justify-start gap-12 sm:gap-28 mb-8">
+                    <div ref={ref} className="flex flex-row items-center justify-center lg:justify-start gap-12 sm:gap-28 mb-4 lg:mb-8">
                         <div>
                             <div className="text-3xl font-bold text-blue2">
                                 {inView ? <CountUp start={0} end={8} duration={2} />: '0'}+
@@ -86,11 +86,11 @@ const TutorSection: React.FC = () => {
                 {/* Right side - Tutor Cards */}
                 <div className="w-full lg:w-1/2">
                     <div className="grid grid-cols-2 xs:grid-cols-3 gap-4">
-                        <TutorCard name="Shubham" topic="Engineering" image="/team/shubham_panchal.png" />
+                        <TutorCard name="Aditya Nair" topic="UMPTYMP" image="/team/aditya_nair.png" />
                         <div className="hidden xs:block">
                             <TutorCard name="Felix Cheng" topic="Geometry" image="/team/felix_cheng.png" />
                         </div>
-                        <TutorCard name="Eric Yang" topic="UMTYMP" image="/team/eric_yang.png"/>
+                        <TutorCard name="Eric Yang" topic="Chess" image="/team/eric_yang.png"/>
                     </div>
                 </div>
             </div>

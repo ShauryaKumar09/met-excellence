@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaChalkboardTeacher, FaVideo, FaClock } from 'react-icons/fa';
+import { FaChalkboardTeacher, FaVideo, FaClock, FaCopy } from 'react-icons/fa';
 import { useRouter } from 'next/navigation'; // Import useRouter
 import { FaAngleRight } from 'react-icons/fa';
 
@@ -40,7 +40,7 @@ const classes: ClassItem[] = [
     moreInfoLink: '/classes/chess',
   },
   {
-    name: 'UMTYMP Entrance Exam Prep',
+    name: 'UMTYMP Exam Prep',
     image: '/banners/umtymp.png',
     isInPerson: false,
     description: 'We all know how wonderful the UMTYMP program is, but we also know that the entrance exam is very tough. Ensure that you pass the entrance exam by signing up for this exam preparation class! We will go over test taking strategy, tricks to save you time and effort, and much more!',
@@ -112,6 +112,16 @@ const classes: ClassItem[] = [
   },
 ];
 
+const copyToClipboard = (className: string) => {
+  const url = `${window.location.origin}${window.location.pathname}?class=${className.toLowerCase().replace(/\s+/g, '-')}`;
+  navigator.clipboard.writeText(url).then(() => {
+    alert('URL copied to clipboard!');
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+  });
+};
+
+
 const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
   const id = classItem.name.toLowerCase().replace(/\s+/g, '-');
   return (
@@ -156,31 +166,39 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
             'Grade information not available'
           )}
         </p>
-        <div className="flex space-x-4">
-          {classItem.comingSoon ? (
-            <button
-              className="px-4 py-2 rounded bg-grey text-gray-500 cursor-not-allowed"
-              disabled
-            >
-              Coming Soon
-            </button>
-          ) : (
-            <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
+        <div className='flex justify-between'>
+          <div className="flex space-x-4">
+            {classItem.comingSoon ? (
               <button
-                className="px-4 py-2 rounded bg-blue2 text-white hover:bg-blue1 transition-colors"
+                className="px-4 py-2 rounded bg-grey text-gray-500 cursor-not-allowed"
+                disabled
               >
-                Sign Up for {classItem.name}
+                Coming Soon
               </button>
-            </Link>
-          )}
-          {classItem.moreInfoLink ? (
-            <Link href={classItem.moreInfoLink}>
-              <button className="bg-grey text-blue2 px-6 py-2 rounded hover:bg-gray-300 transition-colors flex items-center justify-center sm:justify-start w-full sm:w-auto">
-                More Information
-                <FaAngleRight className='ml-2'/>
-              </button>
-            </Link>
-          ) : null}
+            ) : (
+              <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
+                <button
+                  className="px-4 py-2 rounded bg-blue2 text-white hover:bg-blue1 transition-colors"
+                >
+                  Sign Up for {classItem.name}
+                </button>
+              </Link>
+            )}
+            {classItem.moreInfoLink ? (
+              <Link href={classItem.moreInfoLink}>
+                <button className="bg-grey text-blue2 px-6 py-2 rounded hover:bg-gray-300 transition-colors flex items-center justify-center sm:justify-start w-full sm:w-auto">
+                  More Info
+                  <FaAngleRight className='ml-2'/>
+                </button>
+              </Link>
+            ) : null}
+          </div>
+          <button
+              onClick={() => copyToClipboard(classItem.name)}
+              className="px-4 py-2 rounded bg-grey text-blue2 hover:bg-gray-300 transition-colors ml-4"
+            >
+              <FaCopy className=''/>
+          </button>
         </div>
       </div>
     </div>
