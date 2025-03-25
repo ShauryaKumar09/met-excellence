@@ -61,6 +61,16 @@ const classes: ClassItem[] = [
     grades: [4, 8],
   },
   {
+    name: 'Intro to Chemistry',
+    image: '/banners/chemistry.png',
+    isInPerson: false,
+    description: 'This course is an introductory course to basic chemistry principles and ideas. All ages are welcome, we will be working towards building understanding of chemistry and the ideas that shape our world.',
+    instructors: 'Mr. Anishk Nag',
+    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Chemistry',
+    comingSoon: true,
+    grades: [4, 8],
+  },
+  {
     name: 'AMC 8 Prep',
     image: '/banners/amc8.png',
     isInPerson: false,
@@ -87,16 +97,6 @@ const classes: ClassItem[] = [
     description: 'Introduction to Middle School and 10th Grade Biology.',
     instructors: 'Mr. Evan Huss',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Biology',
-    comingSoon: true,
-    grades: [4, 8],
-  },
-  {
-    name: 'Intro to Chemistry',
-    image: '/banners/chemistry.png',
-    isInPerson: false,
-    description: 'This course is an introductory course to basic chemistry principles and ideas. All ages are welcome, we will be working towards building understanding of chemistry and the ideas that shape our world.',
-    instructors: 'Mr. Anishk Nag',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Chemistry',
     comingSoon: true,
     grades: [4, 8],
   },
@@ -135,6 +135,12 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
           loading="lazy"
         />
       </div>
+      <button
+              onClick={() => copyToClipboard(classItem.name)}
+              className="px-4 py-2 rounded bg-grey text-blue2 hover:bg-gray-300 transition-colors absolute mt-4 ml-4"
+            >
+              <FaCopy />
+        </button>
       <div className="md:w-2/3 p-8">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-bold text-blue2">{classItem.name}</h2>
@@ -193,12 +199,6 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
               </Link>
             ) : null}
           </div>
-          <button
-              onClick={() => copyToClipboard(classItem.name)}
-              className="px-4 py-2 rounded bg-grey text-blue2 hover:bg-gray-300 transition-colors ml-4"
-            >
-              <FaCopy className=''/>
-          </button>
         </div>
       </div>
     </div>
@@ -208,6 +208,8 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
 const AllClassesPage: React.FC = () => {
   const router = useRouter(); // Use useRouter
   const [classParam, setClassParam] = React.useState<string | null>(null);
+  const [hasHighlighted, setHasHighlighted] = React.useState(false);
+
 
   useEffect(() => {
     if (typeof window !== 'undefined') { // Ensure we're in the browser
@@ -226,9 +228,21 @@ const AllClassesPage: React.FC = () => {
           block: 'center',
           inline: 'nearest',
         });
+        
+        // Set the highlight effect after a delay
+        setTimeout(() => {
+          element.classList.add('highlighted');
+          
+          // Remove the highlight after another delay
+          setTimeout(() => {
+            element.classList.remove('highlighted');
+          }, 2000); // Adjust this delay as needed
+        }, 500); // Adjust this delay as needed
       }
     }
   }, [classParam]);
+  
+  
 
   return (
     <div className='bg-grey'>
