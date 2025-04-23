@@ -56,7 +56,7 @@ const TutorSection: React.FC = () => {
                         </div>
                         <div>
                             <div className="text-3xl font-bold text-blue2">
-                                {inView ? <CountUp start={0} end={50} duration={2} />: '0'}+
+                                {inView ? <CountUp start={0} end={82} duration={2} />: '0'}+
                             </div>
                             <div className="text-blue3">hours</div>
                         </div>
