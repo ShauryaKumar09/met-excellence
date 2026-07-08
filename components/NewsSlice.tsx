@@ -1,26 +1,26 @@
-"use client";
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const NewsSlice: React.FC = () => {
     const flyers = [
-        { src: "/flyers/chessflyer.png", alt: "Chess flyer", href: "/classes", classVal: "chess" },
-        { src: "/flyers/umptympflyer.png", alt: "UMTYMP flyer", href: "/classes", classVal: "umtymp-entrance-exam-prep" },
+        {
+            src: "/flyers/physicsflyer.png",
+            alt: "Intro to Physics flyer",
+            href: "/classes?class=intro-to-physics",
+        },
+        {
+            src: "/flyers/tutorsflyer.png",
+            alt: "We are looking for tutors flyer",
+            href: "https://docs.google.com/forms/d/e/1FAIpQLSc4y_cO4y4v5_MI474o9HFHkreYgK67cPZQO6Ns7b9yj-Z7yw/viewform",
+            external: true,
+        },
+        {
+            src: "/flyers/freetutoringflyer.png",
+            alt: "Need free tutoring flyer",
+            href: "/classes",
+        },
     ];
-
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentSlide((prevSlide) => (prevSlide + 1) % flyers.length);
-        }, 5000);
-
-        return () => clearInterval(timer);
-    }, []);
-
-    const currentFlyer = flyers[currentSlide];
 
     return (
         <div className='bg-blue3 flex flex-col justify-center items-center'>
@@ -29,15 +29,23 @@ const NewsSlice: React.FC = () => {
                 <p className="text-white text-xl mb-8">
                     Here are some of our flyers
                 </p>
-                <div className="relative w-full h-96">
-                    <Link href={currentFlyer.classVal ? `${currentFlyer.href}?class=${currentFlyer.classVal}` : currentFlyer.href}>
-                        <Image
-                            src={currentFlyer.src}
-                            alt={currentFlyer.alt}
-                            fill
-                            className="object-contain"
-                        />
-                    </Link>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                    {flyers.map((flyer) => (
+                        <Link
+                            key={flyer.src}
+                            href={flyer.href}
+                            {...(flyer.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        >
+                            <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden shadow-lg hover:scale-[1.02] transition-transform">
+                                <Image
+                                    src={flyer.src}
+                                    alt={flyer.alt}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        </Link>
+                    ))}
                 </div>
             </div>
         </div>

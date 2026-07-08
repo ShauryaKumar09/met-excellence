@@ -4,7 +4,6 @@ import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaChalkboardTeacher, FaVideo, FaClock, FaCopy } from 'react-icons/fa';
 import { useRouter } from 'next/navigation'; // Import useRouter
 import { FaAngleRight } from 'react-icons/fa';
 
@@ -22,7 +21,6 @@ interface ClassItem {
   time?: string;
   grades?: number[];
   signUpLink: string;
-  comingSoon?: boolean;
   tags?: string[];
   moreInfoLink?: string;
 }
@@ -61,23 +59,12 @@ const classes: ClassItem[] = [
     grades: [4, 8],
   },
   {
-    name: 'Intro to Chemistry',
-    image: '/banners/chemistry.png',
-    isInPerson: false,
-    description: 'This course is an introductory course to basic chemistry principles and ideas. All ages are welcome, we will be working towards building understanding of chemistry and the ideas that shape our world.',
-    instructors: 'Mr. Anishk Nag',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Chemistry',
-    comingSoon: true,
-    grades: [4, 8],
-  },
-  {
     name: 'AMC 8 Prep',
     image: '/banners/amc8.png',
     isInPerson: false,
     description: 'This rigorous 16-week course prepares you for the AMC 8 next fall. You can sign up for the class even if it is still going on; we cover different topics every week. This class will cover test strategies, number theory, geometry, combinatorics and probability, and algebra. Other topics will also be covered. We will go over previous AMC 8 tests.',
     instructors: 'Mr. Kevin Qiu',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=AMC+8+Prep',
-    comingSoon: true,
     grades: [3, 8],
   },
   {
@@ -87,17 +74,6 @@ const classes: ClassItem[] = [
     description: 'This class will introduce the basic principles of mechanical physics: kinematics, gravity, and Newton\'s laws.',
     instructors: 'Mr. Kevin Qiu',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Physics',
-    comingSoon: true,
-    grades: [4, 8],
-  },
-  {
-    name: 'Biology',
-    image: '/banners/biology.png',
-    isInPerson: false,
-    description: 'Introduction to Middle School and 10th Grade Biology.',
-    instructors: 'Mr. Evan Huss',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Biology',
-    comingSoon: true,
     grades: [4, 8],
   },
   {
@@ -107,26 +83,15 @@ const classes: ClassItem[] = [
     description: 'This course is a detailed introduction into Geometry (Euclidean) designed to foster students\' minds with ideas of proofs, congruence, similarity, and problem solving. For a more advanced Geometry course, or if you are looking for a competition-math style class, please sign up for AMC 8 Prep.',
     instructors: 'Mr. Felix Cheng',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Geometry',
-    comingSoon: true,
     grades: [4, 8],
   },
 ];
 
-const copyToClipboard = (className: string) => {
-  const url = `${window.location.origin}${window.location.pathname}?class=${className.toLowerCase().replace(/\s+/g, '-')}`;
-  navigator.clipboard.writeText(url).then(() => {
-    alert('URL copied to clipboard!');
-  }).catch(err => {
-    console.error('Failed to copy: ', err);
-  });
-};
-
-
 const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
   const id = classItem.name.toLowerCase().replace(/\s+/g, '-');
   return (
-    <div id={id} className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-      <div className="md:w-2/5 relative h-64 md:h-auto">
+    <div id={id} className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="relative h-48">
         <Image
           src={classItem.image}
           alt={classItem.name}
@@ -135,70 +100,36 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
           loading="lazy"
         />
       </div>
-      <button
-              onClick={() => copyToClipboard(classItem.name)}
-              className="px-4 py-2 rounded bg-grey text-blue2 hover:bg-gray-300 transition-colors absolute mt-4 ml-4"
-            >
-              <FaCopy />
-        </button>
-      <div className="md:w-2/3 p-8">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-bold text-blue2">{classItem.name}</h2>
-          {classItem.comingSoon ? (
-            <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm flex items-center">
-              <FaClock className='mr-2' />Coming Soon
-            </span>
-          ) : classItem.isInPerson ? (
-            <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm flex items-center">
-              <FaChalkboardTeacher className="mr-2" /> In Person
-            </span>
-          ) : (
-            <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm flex items-center">
-              <FaVideo className="mr-2" /> Zoom
-            </span>
-          )}
-        </div>
-        <p className="text-blue3 mb-4">{classItem.description}</p>
-        <p className="text-gray-600">Taught by {classItem.instructors}</p>
-        <p className="text-gray-600">{classItem.time}</p>
-        <p className="text-gray-600 mb-6">
-          {classItem.grades && classItem.grades.length > 0 ? (
-            classItem.grades.length === 1 ? (
-              `Recommended grade: ${classItem.grades[0]}th`
-            ) : (
-              `Recommended grades: ${classItem.grades[0]}-${classItem.grades[classItem.grades.length - 1]}th`
-            )
-          ) : (
-            'Grade information not available'
-          )}
+      <div className="flex flex-col flex-grow p-6">
+        <h2 className="text-2xl font-bold text-blue2 mb-3">{classItem.name}</h2>
+        <p className="text-gray-700 mb-3">
+          <span className="font-semibold">Tutors:</span> {classItem.instructors}
         </p>
-        <div className='flex justify-between'>
-          <div className="flex space-x-4">
-            {classItem.comingSoon ? (
-              <button
-                className="px-4 py-2 rounded bg-grey text-gray-500 cursor-not-allowed"
-                disabled
-              >
-                Coming Soon
+        <p className="text-blue3 mb-4">{classItem.description}</p>
+        {classItem.time && <p className="text-gray-600 mb-4">{classItem.time}</p>}
+        {classItem.grades && classItem.grades.length > 0 && (
+          <span className="bg-blue-100 text-blue2 px-4 py-1.5 rounded-full text-sm self-start mb-6">
+            {classItem.grades.length === 1
+              ? `Grade ${classItem.grades[0]}`
+              : `Grades ${classItem.grades[0]}–${classItem.grades[classItem.grades.length - 1]}`}
+          </span>
+        )}
+        <div className="mt-auto flex flex-wrap gap-3">
+          <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
+            <button
+              className="px-4 py-2 rounded bg-blue2 text-white hover:bg-blue1 transition-colors"
+            >
+              Sign Up
+            </button>
+          </Link>
+          {classItem.moreInfoLink ? (
+            <Link href={classItem.moreInfoLink}>
+              <button className="bg-grey text-blue2 px-4 py-2 rounded hover:bg-gray-300 transition-colors flex items-center">
+                More Info
+                <FaAngleRight className='ml-2'/>
               </button>
-            ) : (
-              <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
-                <button
-                  className="px-4 py-2 rounded bg-blue2 text-white hover:bg-blue1 transition-colors"
-                >
-                  Sign Up for {classItem.name}
-                </button>
-              </Link>
-            )}
-            {classItem.moreInfoLink ? (
-              <Link href={classItem.moreInfoLink}>
-                <button className="bg-grey text-blue2 px-6 py-2 rounded hover:bg-gray-300 transition-colors flex items-center justify-center sm:justify-start w-full sm:w-auto">
-                  More Info
-                  <FaAngleRight className='ml-2'/>
-                </button>
-              </Link>
-            ) : null}
-          </div>
+            </Link>
+          ) : null}
         </div>
       </div>
     </div>
@@ -254,9 +185,11 @@ const AllClassesPage: React.FC = () => {
       <Navbar />
       <FAQHeader title='All Classes' description='All classes below are free to sign up for. Unless otherwise stated, all classes will be online on Zoom. These are public, small-group classes on specific topics meant to bolster a student&apos;s interest in the subject and provide a solid understanding of the topics covered.' />
       <div className="p-4 sm:p-8 max-w-6xl mx-auto my-8">
-        {classes.map((classItem) => (
-          <ClassCard key={classItem.name} classItem={classItem} />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {classes.map((classItem) => (
+            <ClassCard key={classItem.name} classItem={classItem} />
+          ))}
+        </div>
         <JoinUsBar />
       </div>
       <Footer />

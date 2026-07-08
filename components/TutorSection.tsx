@@ -86,10 +86,10 @@ const TutorSection: React.FC = () => {
                 {/* Right side - Tutor Cards */}
                 <div className="w-full lg:w-1/2">
                     <div className="grid grid-cols-2 xs:grid-cols-3 gap-4">
-                        <TutorCard name="Aditya Nair" topic="UMTYMP" image="/team/aditya_nair.png" />
-                        <TutorCard name="Eric Yang" topic="Chess" image="/team/eric_yang.png"/>
+                        <TutorCard name="Gautam Goyal" topic="Physics" image="/team/gautam_goyal.png" />
+                        <TutorCard name="Ethan Zou" topic="UMTYMP Prep" image="/team/ethan_zou.png"/>
                         <div className="hidden xs:block">
-                            <TutorCard name="Felix Cheng" topic="Geometry" image="/team/felix_cheng.png" />
+                            <TutorCard name="Gavin Peng" topic="Python" image="/team/gavin_peng.jpg" />
                         </div>
                     </div>
                 </div>

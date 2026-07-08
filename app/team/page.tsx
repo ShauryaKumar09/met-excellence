@@ -10,9 +10,10 @@ import FAQHeader from '@/components/props/Header';
 
 interface TeamMember {
     name: string;
-    role: string;
-    imageUrl: string;
-    email: string;
+    role?: string;
+    tutorOf?: string;
+    imageUrl?: string;
+    email?: string;
 }
 
 interface TeamSubcategory {
@@ -25,201 +26,97 @@ interface TeamCategory {
     subcategories: TeamSubcategory[];
 }
 
-const TeamMemberComponent: React.FC<TeamMember> = ({ name, role, imageUrl, email }) => (
+const TeamMemberComponent: React.FC<TeamMember> = ({ name, role, tutorOf, imageUrl, email }) => (
     <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-        <Image src={imageUrl} alt={name} width={128} height={128} className="w-44 md:h-44 h-32 rounded-2xl mb-4 object-cover" />
+        {imageUrl ? (
+            <Image src={imageUrl} alt={name} width={128} height={128} className="w-44 md:h-44 h-32 rounded-2xl mb-4 object-cover" />
+        ) : (
+            <div className="w-44 md:h-44 h-32 rounded-2xl mb-4 bg-gray-200" />
+        )}
         <h3 className="text-xl font-semibold text-blue2 mb-2 text-center">{name}</h3>
-        <p className="text-blue3 font-medium mb-2 text-center">{role}</p>
-        <div className="flex gap-4">
-            <Link target="_blank" rel="noopener noreferrer" href={`mailto:${email}`} className="text-blue2 hover:text-blue1 transition-colors">
-                <FaEnvelope size={24} />
-            </Link>
-        </div>
+        {role && <p className="text-blue3 font-medium mb-2 text-center">{role}</p>}
+        {tutorOf && <p className="text-blue3 font-medium mb-2 text-center">{tutorOf}</p>}
+        {email && (
+            <div className="flex gap-4">
+                <Link target="_blank" rel="noopener noreferrer" href={`mailto:${email}`} className="text-blue2 hover:text-blue1 transition-colors">
+                    <FaEnvelope size={24} />
+                </Link>
+            </div>
+        )}
     </div>
 );
 
 const MeetTheTeamPage: React.FC = () => {
     const teamCategories: TeamCategory[] = [
         {
-            category: "Tutors",
-            subcategories: [
-                {
-                    subcategory: "STEM Tutors",
-                    members: [
-                        {
-                            name: "Kevin Qiu",
-                            role: "AMC 8, Physics Tutor",
-                            imageUrl: "/team/kevin_qiu.png",
-                            email: "kevinhqiu2007@gmail.com"
-                        },
-                        {
-                            name: "Felix Cheng",
-                            role: "Geometry Tutor",
-                            imageUrl: "/team/felix_cheng.png",
-                            email: "chengfeel0@gmail.com"
-                        },
-                        {
-                            name: "Evan Huss",
-                            role: "Biology Tutor",
-                            imageUrl: "/team/evan_huss.png",
-                            email: "evan.huss00@gmail.com"
-                        },
-                        {
-                            name: "Anishk Nag",
-                            role: "Chemistry Tutor",
-                            imageUrl: "/team/anishk_nag.png",
-                            email: "naganishk000@isd284.com"
-                        },
-                        {
-                            name: "Shubham Panchal",
-                            role: "Engineering Tutor",
-                            imageUrl: "/team/shubham_panchal.png",
-                            email: "panchshu000@isd284.com"
-                        },
-                        {
-                            name: "Aaron Zou",
-                            role: "CS, UMTYMP Tutor",
-                            imageUrl: "/team/aaron_zou.png",
-                            email: "mincathepig@gmail.com"
-                        },
-                        {
-                            name: "Eric Yang",
-                            role: "UMTYMP Prep Tutor",
-                            imageUrl: "/team/eric_yang.png",
-                            email: "yangeri001@isd284.com"
-                        },
-                        {
-                            name: "Aditya Nair",
-                            role: "UMTYMP Prep Tutor",
-                            imageUrl: "/team/aditya_nair.png",
-                            email: "nairadi000@isd284.com"
-                        }
-                    ]
-                },
-                {
-                    subcategory: "Chess Tutors",
-                    members: [
-                        {
-                            name: "Evan Xiong",
-                            role: "Chess Tutor",
-                            imageUrl: "/team/evan_xiong.png",
-                            email: "evanxionga@gmail.com"
-                        },
-                        {
-                            name: "Eric Yang",
-                            role: "Chess Tutor",
-                            imageUrl: "/team/eric_yang.png",
-                            email: "yangeri001@isd284.com"
-                        },
-                        {
-                            name: "Felix Cheng",
-                            role: "Chess Tutor",
-                            imageUrl: "/team/felix_cheng.png",
-                            email: "chengfeel0@gmail.com"
-                        },
-                        {
-                            name: "Aaron Zou",
-                            role: "Chess Tutor",
-                            imageUrl: "/team/aaron_zou.png",
-                            email: "mincathepig@gmail.com"
-                        }
-                    ]
-                },
-                {
-                    subcategory: "Other Subjects",
-                    members: [
-                        {
-                            name: "Jason Lai",
-                            role: "Chinese Culture Tutor",
-                            imageUrl: "/team/jason_lai.png",
-                            email: "laiyij000@isd284.com"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            category: "Officers",
+            category: "Our Team",
             subcategories: [
                 {
                     subcategory: "",
                     members: [
                         {
-                            name: "Shubham Panchal",
-                            role: "STEM Officer",
-                            imageUrl: "/team/shubham_panchal.png",
-                            email: "panchshu000@isd284.com"
+                            name: "Gautam Goyal",
+                            role: "Co-President of MET",
+                            tutorOf: "Physics Tutor",
+                            imageUrl: "/team/gautam_goyal.png"
                         },
                         {
-                            name: "Harry Ding",
-                            role: "Marketing Officer",
-                            imageUrl: "/team/harry_ding.png",
-                            email: "dinghar000@gmail.com"
+                            name: "Ethan Zou",
+                            role: "Co-President of MET",
+                            tutorOf: "UMTYMP Prep Tutor",
+                            imageUrl: "/team/ethan_zou.png"
                         },
                         {
-                            name: "Jason Lai",
-                            role: "Chinese Officer",
-                            imageUrl: "/team/jason_lai.png",
-                            email: "laiyij000@isd284.com"
-                        },
-                    ]
-                }
-            ]
-        },
-        {
-            category: "Board of Directors",
-            subcategories: [
-                {
-                    subcategory: "",
-                    members: [
-                        {
-                            name: "Aaron Zou",
-                            role: "President",
-                            imageUrl: "/team/aaron_zou.png",
-                            email: "mincathepig@gmail.com"
+                            name: "Lucas Ma",
+                            role: "MN Chapter Chair",
+                            tutorOf: "Physics Tutor",
+                            imageUrl: "/team/lucas_ma.jpg"
                         },
                         {
-                            name: "Eric Yang",
-                            role: "Vice President",
-                            imageUrl: "/team/eric_yang.png",
-                            email: "yangeri001@isd284.com",
+                            name: "Aatman Bhatt",
+                            role: "Director of Logistics",
+                            tutorOf: "UMTYMP Prep Tutor; Python Programming Tutor"
                         },
                         {
-                            name: "Anishk Nag",
+                            name: "Gavin Peng",
                             role: "Director of Volunteers",
-                            imageUrl: "/team/anishk_nag.png",
-                            email: "naganishk000@isd284.com"
+                            tutorOf: "Python Programming Tutor",
+                            imageUrl: "/team/gavin_peng.jpg"
                         },
                         {
-                            name: "Evan Xiong",
-                            role: "Chair",
-                            imageUrl: "/team/evan_xiong.png",
-                            email: "evanxionga@gmail.com"
+                            name: "Jishnu Satapathy",
+                            role: "Director of Outreach",
+                            tutorOf: "Python Programming Tutor",
+                            imageUrl: "/team/jishnu_satapathy.jpg"
                         },
                         {
-                            name: "Evan Huss",
-                            role: "Director of Marketing",
-                            imageUrl: "/team/evan_huss.png",
-                            email: "evan.huss00@gmail.com"
+                            name: "Arnav Hasti",
+                            role: "Director of Content",
+                            tutorOf: "UMTYMP Prep Tutor"
                         },
                         {
-                            name: "Felix Cheng",
+                            name: "Jatin Takkoli",
+                            role: "Director of STEM/Marketing"
+                        },
+                        {
+                            name: "Tony Cheng",
+                            role: "Director of Chess"
+                        },
+                        {
+                            name: "Vishnu Chandrashekar",
                             role: "Director of Finance",
-                            imageUrl: "/team/felix_cheng.png",
-                            email: "chengfeel0@gmail.com"
+                            tutorOf: "UMTYMP Prep Tutor",
+                            imageUrl: "/team/vishnu_chandrashekar.jpg"
                         },
                         {
-                            name: "Kevin Qiu",
-                            role: "Program Director",
-                            imageUrl: "/team/kevin_qiu.png",
-                            email: "kevinhqiu2007@gmail.com"
+                            name: "Aarav Sandip",
+                            role: "Director of Technology",
+                            tutorOf: "UMTYMP Prep Tutor"
                         },
                         {
-                            name: "Mohan Atkuri",
-                            role: "Technology Director",
-                            imageUrl: "/team/mohan_atkuri.png",
-                            email: "atkurmoh000@isd284.com"
-                        },
+                            name: "Nitin Prabu",
+                            tutorOf: "CompTIA Cybersecurity Tutor"
+                        }
                     ]
                 }
             ]

@@ -55,8 +55,8 @@ const Footer = () => {
         ))}
       </div>
       </div>
-      <div className="text-center text-xs sm:mt-0 mt-8 sm:-mb-4 mb-0">
-      <p>made with 🤍 by mohan atkuri</p>
+      <div className="text-left mt-8">
+      <p>Built by <span className="underline">Sarvajith Karun</span>, <span className="underline">Mohan Atkuri</span>, <span className="underline">Shaurya Kumar</span>, and <span className="underline">Jishnu Satapathy</span></p>
       </div>
     </div>
     </footer>
