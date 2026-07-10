@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { FaBook, FaFilePdf, FaVideo, FaExternalLinkAlt, FaSearch } from "react-icons/fa";
+import { FaBook, FaSearch } from "react-icons/fa";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
