@@ -49,11 +49,16 @@ const TeamMemberComponent: React.FC<TeamMember> = ({ name, role, tutorOf, imageU
 // Headshots are keyed by name so a person can appear in more than one section
 // (e.g. an executive who also tutors) without duplicating the image path.
 const headshots: Record<string, string> = {
+    "Aarav Sandip": "/team/aarav_sandip.jpg",
+    "Aatman Bhatt": "/team/aatman_bhatt.png",
+    "Calvin Lam": "/team/calvin_lam.jpg",
     "Ethan Zou": "/team/ethan_zou.png",
     "Gautam Goyal": "/team/gautam_goyal.png",
     "Gavin Peng": "/team/gavin_peng.jpg",
+    "Jatin Takkoli": "/team/jatin_takkoli.png",
     "Jishnu Satapathy": "/team/jishnu_satapathy.jpg",
     "Lucas Ma": "/team/lucas_ma.jpg",
+    "Tony Cheng": "/team/tony_cheng.jpg",
     "Vishnu Chandrashekar": "/team/vishnu_chandrashekar.jpg",
 };
 
