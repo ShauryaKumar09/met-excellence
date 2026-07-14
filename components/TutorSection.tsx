@@ -44,19 +44,19 @@ const TutorSection: React.FC = () => {
                     <div ref={ref} className="flex flex-row items-center justify-center lg:justify-start gap-12 sm:gap-28 mb-4 lg:mb-8">
                         <div>
                             <div className="text-3xl font-bold text-blue2">
-                                {inView ? <CountUp start={0} end={8} duration={2} />: '0'}+
+                                {inView ? <CountUp start={0} end={5} duration={2} />: '0'}+
                             </div>
                             <div className="text-blue3">classes</div>
                         </div>
                         <div>
                             <div className="text-3xl font-bold text-blue2">
-                                {inView ? <CountUp start={0} end={15} duration={2} />: '0'}+
+                                {inView ? <CountUp start={0} end={10} duration={2} />: '0'}+
                             </div>
                             <div className="text-blue3">tutors</div>
                         </div>
                         <div>
                             <div className="text-3xl font-bold text-blue2">
-                                {inView ? <CountUp start={0} end={82} duration={2} />: '0'}+
+                                {inView ? <CountUp start={0} end={300} duration={2} />: '0'}+
                             </div>
                             <div className="text-blue3">hours</div>
                         </div>

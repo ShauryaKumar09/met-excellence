@@ -27,63 +27,55 @@ interface ClassItem {
 
 const classes: ClassItem[] = [
   {
+    name: 'Intro to Physics',
+    image: '/banners/physics.png',
+    isInPerson: false,
+    description: 'A beginner-friendly introduction to mechanical physics. We cover kinematics, forces, gravity, and Newton\'s laws, with worked problems and demos each session so the concepts stick.',
+    instructors: 'Gautam Goyal and Lucas Ma',
+    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Physics',
+    time: 'Sundays and Wednesdays, 2:00 - 3:30 PM',
+    grades: [4, 8],
+  },
+  {
     name: 'Chess',
     image: '/banners/chess.png',
     isInPerson: true,
-    description: '[LOCATIONS VARY FOR CHESS. Check emails and wechat for the correct location.] Instruction and Tournaments. Beginner to Advanced level. Tournaments held! Group instruction and ELO system. All ages welcome!',
-    instructors: 'Mr. Evan Xiong, Mr. Eric Yang, and Mr. Felix Cheng',
+    description: '[LOCATIONS VARY FOR CHESS. Check emails and WeChat for the correct location.] Group instruction from beginner to advanced, plus tournaments run on an ELO system. All ages welcome!',
+    instructors: 'Tony Cheng and Shrey Uppal',
     signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfsBLjoVsIYgjfD-tdugOPzQY7bH-13Ry4RX-ALVIIvvxcQgQ/viewform',
-    time: '1pm - 3pm CST on Sundays',
+    time: 'TBD',
     grades: [1, 8],
     moreInfoLink: '/classes/chess',
-  },
-  {
-    name: 'UMTYMP Exam Prep',
-    image: '/banners/umtymp.png',
-    isInPerson: false,
-    description: 'We all know how wonderful the UMTYMP program is, but we also know that the entrance exam is very tough. Ensure that you pass the entrance exam by signing up for this exam preparation class! We will go over test taking strategy, tricks to save you time and effort, and much more!',
-    instructors: 'Mr. Eric Yang, Mr. Kevin Qiu, Mr. Aaron Zou, and Mr. Aditya Nair',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=UMTYMP+Prep+(Info+Meeting+March+9)',
-    time: '7pm - 9pm CST on Sundays',
-    grades: [4, 7],
-    moreInfoLink: 'https://r.umn.edu/academics/UMTYMP'
   },
   {
     name: 'Intro to Python',
     image: '/banners/python.png',
     isInPerson: false,
-    description: 'This is a beginner level class on Python, the programming language. All ages are welcome, and no prior programming experience is required. Get familiar with Python syntax and computer science ideas. We will build a mini-project using Python towards the end of the course and give real-world insight into the usefulness of computer science!',
-    instructors: 'Mr. Aaron Zou and Mr. Mohan Atkuri',
+    description: 'A beginner-level class on Python. No prior programming experience required. Learn Python syntax and core computer science ideas, then build a mini-project at the end of the course.',
+    instructors: 'Aatman Bhatt and Gavin Peng',
     signUpLink: 'https://forms.gle/47zgbzGgQbi9mZLd9',
-    time: '8pm - 9pm CST on Tuesdays',
+    time: 'TBD',
     grades: [4, 8],
   },
   {
-    name: 'AMC 8 Prep',
-    image: '/banners/amc8.png',
+    name: 'UMTYMP Exam Prep',
+    image: '/banners/umtymp.png',
     isInPerson: false,
-    description: 'This rigorous 16-week course prepares you for the AMC 8 next fall. You can sign up for the class even if it is still going on; we cover different topics every week. This class will cover test strategies, number theory, geometry, combinatorics and probability, and algebra. Other topics will also be covered. We will go over previous AMC 8 tests.',
-    instructors: 'Mr. Kevin Qiu',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=AMC+8+Prep',
-    grades: [3, 8],
+    description: 'The UMTYMP entrance exam is tough. This class prepares you for it with test-taking strategy, time-saving tricks, and practice on the kinds of problems the exam actually asks.',
+    instructors: 'Ethan Zou, Aarav Sandip, Aatman Bhatt, and Vishnu Chandrashekar',
+    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=UMTYMP+Prep+(Info+Meeting+March+9)',
+    time: 'TBD',
+    grades: [4, 7],
+    moreInfoLink: 'https://r.umn.edu/academics/UMTYMP'
   },
   {
-    name: 'Intro to Physics',
-    image: '/banners/physics.png',
+    name: 'Cybersecurity',
+    image: '/banners/cybersecurity.png',
     isInPerson: false,
-    description: 'This class will introduce the basic principles of mechanical physics: kinematics, gravity, and Newton\'s laws.',
-    instructors: 'Mr. Kevin Qiu',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Physics',
-    grades: [4, 8],
-  },
-  {
-    name: 'Geometry',
-    image: '/banners/geometry.png',
-    isInPerson: false,
-    description: 'This course is a detailed introduction into Geometry (Euclidean) designed to foster students\' minds with ideas of proofs, congruence, similarity, and problem solving. For a more advanced Geometry course, or if you are looking for a competition-math style class, please sign up for AMC 8 Prep.',
-    instructors: 'Mr. Felix Cheng',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Geometry',
-    grades: [4, 8],
+    description: 'An introduction to cybersecurity fundamentals. Course details are still being finalized: TBD.',
+    instructors: 'TBD',
+    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Cybersecurity',
+    time: 'TBD',
   },
 ];
 
@@ -178,9 +170,9 @@ const AllClassesPage: React.FC = () => {
     <div className='bg-grey'>
       <Head>
         <title>All Classes | METExcellence</title>
-        <meta name="description" content="Explore all the free classes offered by METExcellence. Sign up for various subjects including Chess, UMTYMP Prep, AMC 8 Prep, and more." />
+        <meta name="description" content="Explore all the free classes offered by METExcellence. Sign up for Intro to Physics, Chess, Intro to Python, UMTYMP Exam Prep, and more." />
         <meta property="og:title" content="All Classes | METExcellence" />
-        <meta property="og:description" content="Explore all the free classes offered by METExcellence. Sign up for various subjects including Chess, UMTYMP Prep, AMC 8 Prep, and more." />
+        <meta property="og:description" content="Explore all the free classes offered by METExcellence. Sign up for Intro to Physics, Chess, Intro to Python, UMTYMP Exam Prep, and more." />
       </Head>
       <Navbar />
       <FAQHeader title='All Classes' description='All classes below are free to sign up for. Unless otherwise stated, all classes will be online on Zoom. These are public, small-group classes on specific topics meant to bolster a student&apos;s interest in the subject and provide a solid understanding of the topics covered.' />

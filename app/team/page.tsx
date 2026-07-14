@@ -46,78 +46,76 @@ const TeamMemberComponent: React.FC<TeamMember> = ({ name, role, tutorOf, imageU
     </div>
 );
 
+// Headshots are keyed by name so a person can appear in more than one section
+// (e.g. an executive who also tutors) without duplicating the image path.
+const headshots: Record<string, string> = {
+    "Ethan Zou": "/team/ethan_zou.png",
+    "Gautam Goyal": "/team/gautam_goyal.png",
+    "Gavin Peng": "/team/gavin_peng.jpg",
+    "Jishnu Satapathy": "/team/jishnu_satapathy.jpg",
+    "Lucas Ma": "/team/lucas_ma.jpg",
+    "Vishnu Chandrashekar": "/team/vishnu_chandrashekar.jpg",
+};
+
+const member = (name: string, role?: string): TeamMember => ({
+    name,
+    role,
+    imageUrl: headshots[name],
+});
+
 const MeetTheTeamPage: React.FC = () => {
     const teamCategories: TeamCategory[] = [
         {
-            category: "Our Team",
+            category: "Executive Board",
             subcategories: [
                 {
                     subcategory: "",
                     members: [
-                        {
-                            name: "Gautam Goyal",
-                            role: "Co-President of MET",
-                            tutorOf: "Physics Tutor",
-                            imageUrl: "/team/gautam_goyal.png"
-                        },
-                        {
-                            name: "Ethan Zou",
-                            role: "Co-President of MET",
-                            tutorOf: "UMTYMP Prep Tutor",
-                            imageUrl: "/team/ethan_zou.png"
-                        },
-                        {
-                            name: "Lucas Ma",
-                            role: "MN Chapter Chair",
-                            tutorOf: "Physics Tutor",
-                            imageUrl: "/team/lucas_ma.jpg"
-                        },
-                        {
-                            name: "Aatman Bhatt",
-                            role: "Director of Logistics",
-                            tutorOf: "UMTYMP Prep Tutor; Python Programming Tutor"
-                        },
-                        {
-                            name: "Gavin Peng",
-                            role: "Director of Volunteers",
-                            tutorOf: "Python Programming Tutor",
-                            imageUrl: "/team/gavin_peng.jpg"
-                        },
-                        {
-                            name: "Jishnu Satapathy",
-                            role: "Director of Outreach",
-                            tutorOf: "Python Programming Tutor",
-                            imageUrl: "/team/jishnu_satapathy.jpg"
-                        },
-                        {
-                            name: "Arnav Hasti",
-                            role: "Director of Content",
-                            tutorOf: "UMTYMP Prep Tutor"
-                        },
-                        {
-                            name: "Jatin Takkoli",
-                            role: "Director of STEM/Marketing"
-                        },
-                        {
-                            name: "Tony Cheng",
-                            role: "Director of Chess"
-                        },
-                        {
-                            name: "Vishnu Chandrashekar",
-                            role: "Director of Finance",
-                            tutorOf: "UMTYMP Prep Tutor",
-                            imageUrl: "/team/vishnu_chandrashekar.jpg"
-                        },
-                        {
-                            name: "Aarav Sandip",
-                            role: "Director of Technology",
-                            tutorOf: "UMTYMP Prep Tutor"
-                        },
-                        {
-                            name: "Nitin Prabu",
-                            tutorOf: "CompTIA Cybersecurity Tutor"
-                        }
+                        member("Ethan Zou", "Co-President"),
+                        member("Gautam Goyal", "Co-President"),
+                        member("Gavin Peng", "Director of Volunteers"),
+                        member("Jishnu Satapathy", "Director of Marketing"),
+                        member("Aatman Bhatt", "Director of Finance"),
                     ]
+                }
+            ]
+        },
+        {
+            category: "Tutors",
+            subcategories: [
+                {
+                    subcategory: "Introduction to Physics",
+                    members: [member("Gautam Goyal"), member("Lucas Ma")]
+                },
+                {
+                    subcategory: "Chess",
+                    members: [member("Tony Cheng"), member("Shrey Uppal")]
+                },
+                {
+                    subcategory: "Introduction to Python",
+                    members: [member("Aatman Bhatt"), member("Gavin Peng")]
+                },
+                {
+                    subcategory: "UMTYMP Prep",
+                    members: [
+                        member("Ethan Zou"),
+                        member("Aarav Sandip"),
+                        member("Aatman Bhatt"),
+                        member("Vishnu Chandrashekar"),
+                    ]
+                }
+            ]
+        },
+        {
+            category: "TAs",
+            subcategories: [
+                {
+                    subcategory: "UMTYMP",
+                    members: [member("Calvin Lam"), member("Vatsal Sharma")]
+                },
+                {
+                    subcategory: "Physics",
+                    members: [member("Jatin Takkoli")]
                 }
             ]
         }
