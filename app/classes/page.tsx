@@ -20,7 +20,7 @@ interface ClassItem {
   instructors: string;
   time?: string;
   grades?: number[];
-  signUpLink: string;
+  signUpLink?: string;
   tags?: string[];
   moreInfoLink?: string;
 }
@@ -32,7 +32,7 @@ const classes: ClassItem[] = [
     isInPerson: false,
     description: 'A beginner-friendly introduction to mechanical physics. We cover kinematics, forces, gravity, and Newton\'s laws, with worked problems and demos each session so the concepts stick.',
     instructors: 'Gautam Goyal and Lucas Ma',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Intro+to+Physics',
+    signUpLink: 'https://forms.gle/b8vdntRY2sj5H2c16',
     time: 'Sundays and Wednesdays, 2:00 - 3:30 PM',
     grades: [4, 8],
   },
@@ -42,7 +42,7 @@ const classes: ClassItem[] = [
     isInPerson: true,
     description: '[LOCATIONS VARY FOR CHESS. Check emails and WeChat for the correct location.] Group instruction from beginner to advanced, plus tournaments run on an ELO system. All ages welcome!',
     instructors: 'Tony Cheng and Shrey Uppal',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfsBLjoVsIYgjfD-tdugOPzQY7bH-13Ry4RX-ALVIIvvxcQgQ/viewform',
+    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc20g6uWMShqX4Z9ugTQEgV5KyPkuMKeymbp6PuKJJudWqFlQ/viewform',
     time: 'TBD',
     grades: [1, 8],
     moreInfoLink: '/classes/chess',
@@ -53,7 +53,7 @@ const classes: ClassItem[] = [
     isInPerson: false,
     description: 'A beginner-level class on Python. No prior programming experience required. Learn Python syntax and core computer science ideas, then build a mini-project at the end of the course.',
     instructors: 'Aatman Bhatt and Gavin Peng',
-    signUpLink: 'https://forms.gle/47zgbzGgQbi9mZLd9',
+    signUpLink: 'https://forms.gle/EtkQo694bP9nYjau9',
     time: 'TBD',
     grades: [4, 8],
   },
@@ -63,7 +63,7 @@ const classes: ClassItem[] = [
     isInPerson: false,
     description: 'The UMTYMP entrance exam is tough. This class prepares you for it with test-taking strategy, time-saving tricks, and practice on the kinds of problems the exam actually asks.',
     instructors: 'Ethan Zou, Aarav Sandip, Aatman Bhatt, and Vishnu Chandrashekar',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=UMTYMP+Prep+(Info+Meeting+March+9)',
+    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeQL_WdKKptLkvBQx1XJLr4n2qE3Bp5sMx7B3EljMuHHQS_7w/viewform',
     time: 'TBD',
     grades: [4, 7],
     moreInfoLink: 'https://r.umn.edu/academics/UMTYMP'
@@ -74,7 +74,6 @@ const classes: ClassItem[] = [
     isInPerson: false,
     description: 'An introduction to cybersecurity fundamentals. Course details are still being finalized: TBD.',
     instructors: 'TBD',
-    signUpLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeP2-uXB6bVj9VvLlEo21zJgkW-GZ1A2ck2BJj2dFL868pwkg/viewform?usp=pp_url&entry.388184123=Cybersecurity',
     time: 'TBD',
   },
 ];
@@ -107,13 +106,23 @@ const ClassCard: React.FC<{ classItem: ClassItem }> = ({ classItem }) => {
           </span>
         )}
         <div className="mt-auto flex flex-wrap gap-3">
-          <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
+          {classItem.signUpLink ? (
+            <Link href={classItem.signUpLink} target="_blank" rel="noopener noreferrer">
+              <button
+                className="px-4 py-2 rounded bg-blue2 text-white hover:bg-blue1 transition-colors"
+              >
+                Sign Up
+              </button>
+            </Link>
+          ) : (
             <button
-              className="px-4 py-2 rounded bg-blue2 text-white hover:bg-blue1 transition-colors"
+              disabled
+              aria-disabled="true"
+              className="px-4 py-2 rounded bg-gray-300 text-gray-600 cursor-not-allowed"
             >
-              Sign Up
+              Sign-Up Coming Soon
             </button>
-          </Link>
+          )}
           {classItem.moreInfoLink ? (
             <Link href={classItem.moreInfoLink}>
               <button className="bg-grey text-blue2 px-4 py-2 rounded hover:bg-gray-300 transition-colors flex items-center">
