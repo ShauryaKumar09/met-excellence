@@ -5,18 +5,18 @@ import Link from 'next/link';
 const NewsSlice: React.FC = () => {
     const flyers = [
         {
-            src: "/flyers/physicsflyer.png",
+            src: "/flyers/physicsflyer-v2.png",
             alt: "Intro to Physics flyer",
             href: "/classes?class=intro-to-physics",
         },
         {
-            src: "/flyers/tutorsflyer.png",
+            src: "/flyers/tutorsflyer-v2.png",
             alt: "We are looking for tutors flyer",
             href: "https://docs.google.com/forms/d/e/1FAIpQLSc4y_cO4y4v5_MI474o9HFHkreYgK67cPZQO6Ns7b9yj-Z7yw/viewform",
             external: true,
         },
         {
-            src: "/flyers/freetutoringflyer.png",
+            src: "/flyers/freetutoringflyer-v2.png",
             alt: "Need free tutoring flyer",
             href: "/classes",
         },
